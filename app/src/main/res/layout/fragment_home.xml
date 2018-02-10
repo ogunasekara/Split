@@ -11,17 +11,22 @@
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
             android:src="@drawable/shopping_bag" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="49dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/imageView1"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="203dp"
+            android:layout_marginBottom="104dp"
             android:gravity="center"
             android:text="@string/home_fragment_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
