@@ -4,7 +4,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <string name="home_fragment_title">home</string>
+    <string name="home_fragment_title">split</string>
     <string name="list_fragment_title">old lists</string>
     <string name="buy_fragment_title">buy</string>
     <string name="splitter_fragment_title">splitter</string>

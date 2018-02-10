@@ -7,7 +7,8 @@
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_green_dark">
 
         <ImageView
             android:id="@+id/imageView1"
@@ -28,6 +29,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginBottom="104dp"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="@string/home_fragment_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
     </RelativeLayout>
