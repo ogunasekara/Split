@@ -4,10 +4,15 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,9 +28,8 @@ public class ListFragment extends Fragment {
 //    private static final String ARG_PARAM1 = "param1";
 //    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-//    private String mParam1;
-//    private String mParam2;
+    private List<ShoppingList> lists = new ArrayList<>();
+    private ShoppingListAdapter mAdapter;
 
     private OnFragmentInteractionListener mListener;
 
@@ -59,6 +63,8 @@ public class ListFragment extends Fragment {
 //            mParam1 = getArguments().getString(ARG_PARAM1);
 //            mParam2 = getArguments().getString(ARG_PARAM2);
 //        }
+
+
     }
 
     @Override
@@ -68,23 +74,20 @@ public class ListFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
 
-//    // TODO: Rename method, update argument and hook method into UI event
-//    public void onButtonPressed(Uri uri) {
-//        if (mListener != null) {
-//            mListener.onFragmentInteraction(uri);
-//        }
-//    }
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+//        ImageView imageView = (ImageView) getView().findViewById(R.id.foo);
 
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
+        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.recycler_view);
+
+        mAdapter = new ShoppingListAdapter(lists);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+
+        prepareListData();
+    }
 
     @Override
     public void onDetach() {
@@ -106,4 +109,37 @@ public class ListFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    public void prepareListData(){
+        ShoppingList l = new ShoppingList("Valentine's Day");
+        l.addItem("Chocolate");
+        lists.add(l);
+
+        l = new ShoppingList("Grocery");
+        l.addItem("Duck");
+        lists.add(l);
+
+        l = new ShoppingList("Meme Shopping");
+        l.addItem("YOLO");
+        lists.add(l);
+
+        l = new ShoppingList("Apocolypse");
+        l.addItem("Turret");
+        lists.add(l);
+
+        l = new ShoppingList("Survival");
+        l.addItem("Wood");
+        lists.add(l);
+
+        l = new ShoppingList("Daily");
+        l.addItem("Food");
+        lists.add(l);
+
+        l = new ShoppingList("Tornado");
+        l.addItem("Wind");
+        lists.add(l);
+
+        mAdapter.notifyDataSetChanged();
+    }
+
 }
