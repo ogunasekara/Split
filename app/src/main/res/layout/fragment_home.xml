@@ -22,19 +22,19 @@
             android:minWidth="0dp"
             android:src="@drawable/shopping_bag" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="40dp"
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textView2"
+            android:layout_alignBottom="@+id/imageView1"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp"
-            android:gravity="center"
-            android:minHeight="0dp"
-            android:minWidth="0dp"
-            android:src="@drawable/new_list_pencil" />
+            android:layout_gravity="bottom|end"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/create_new" />
+
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignBottom="@+id/imageView1"
@@ -44,8 +44,7 @@
             android:gravity="center"
             android:text="@string/home_fragment_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textStyle="bold"
-            android:id="@+id/textView2" />
+            android:textStyle="bold" />
     </RelativeLayout>
 
 </FrameLayout>
