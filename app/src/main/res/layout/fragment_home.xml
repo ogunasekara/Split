@@ -24,11 +24,11 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="1000dp"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@+id/textView2"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="153dp"
+            android:layout_marginTop="35dp"
             android:gravity="center"
             android:minHeight="0dp"
             android:minWidth="0dp"
@@ -44,7 +44,8 @@
             android:gravity="center"
             android:text="@string/home_fragment_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:id="@+id/textView2" />
     </RelativeLayout>
 
 </FrameLayout>
