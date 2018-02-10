@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Split.iml" filepath="$PROJECT_DIR$/Split.iml" />
+      <module fileurl="file://C:\Users\toosh\Desktop\New folder\Split\Split.iml" filepath="C:\Users\toosh\Desktop\New folder\Split\Split.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\toosh\Desktop\New folder\Split\app\app.iml" filepath="C:\Users\toosh\Desktop\New folder\Split\app\app.iml" />
     </modules>
   </component>
 </project>
