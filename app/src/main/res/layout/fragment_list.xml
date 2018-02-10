@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,13 +9,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/colorPrimary">
+
+        </android.support.v7.widget.Toolbar>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/textView"
+            android:layout_marginLeft="35dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="45dp"
+            android:src="@drawable/new_list_pencil" />
+
         <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="49dp"
+            android:layout_above="@+id/recycler_view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="89dp"
             android:gravity="center"
             android:text="@string/list_fragment_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:id="@+id/textView" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
@@ -22,7 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView"
+            android:layout_below="@+id/my_toolbar"
+            android:layout_marginTop="54dp"
             android:scrollbars="vertical" />
 
     </RelativeLayout>
