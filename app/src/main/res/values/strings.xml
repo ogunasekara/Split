@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Split</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Lists</string>
+    <string name="title_dashboard">Cart</string>
+    <string name="title_notifications">Splitter</string>
 
-    <string name="home_fragment_title">home</string>
+    <string name="home_fragment_title">split</string>
     <string name="list_fragment_title">old lists</string>
     <string name="buy_fragment_title">buy</string>
     <string name="splitter_fragment_title">splitter</string>
