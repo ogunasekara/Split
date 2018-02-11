@@ -8,5 +8,6 @@
     <string name="list_fragment_title">old lists</string>
     <string name="buy_fragment_title">buy</string>
     <string name="splitter_fragment_title">splitter</string>
+    <string name="new_list_fragment_title">New List</string>
 
 </resources>

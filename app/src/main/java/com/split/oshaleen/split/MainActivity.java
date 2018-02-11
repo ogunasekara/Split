@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                     frag = ListFragment.newInstance();
                     break;
                 case R.id.navigation_dashboard:
-                    frag = BuyFragment.newInstance();
+                    frag = NewListFragment.newInstance();
                     break;
                 case R.id.navigation_notifications:
                     frag = SplitFragment.newInstance();
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
             if(frag != null){
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.container, frag);
+                ft.replace(R.id.fragment, frag);
                 ft.addToBackStack(null);
                 ft.commit();
                 return true;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         // set home fragment as initial fragment
         Fragment frag = HomeFragment.newInstance();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.container, frag, frag.getTag());
+        ft.add(R.id.fragment, frag, frag.getTag());
         ft.commit();
 
         mTextMessage = (TextView) findViewById(R.id.message);

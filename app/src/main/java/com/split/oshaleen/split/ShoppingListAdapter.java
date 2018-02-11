@@ -37,6 +37,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         ShoppingList l = lists.get(position);
+
         holder.title.setText(l.getTitle());
         holder.genre.setText(l.getItem(0));
     }

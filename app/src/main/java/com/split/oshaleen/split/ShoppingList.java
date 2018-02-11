@@ -7,8 +7,9 @@ public class ShoppingList {
     private String title;
     private List<String> items;
 
-//    public ShoppingList(){
-//    }
+    public ShoppingList(){
+        this.items = new ArrayList<>();
+    }
 
     public ShoppingList(String title){
         this.title = title;
@@ -24,6 +25,14 @@ public class ShoppingList {
         this.items.add(item);
     }
 
+    public void removeItem(int pos){
+        // return if trying to remove invalid items
+        if (pos >= this.items.size()){ return; }
+        if (pos < 0) { return; }
+
+        this.items.remove(pos);
+    }
+
     public String getItem(int pos){
         return this.items.get(pos);
     }
@@ -31,4 +40,6 @@ public class ShoppingList {
     public String getTitle(){
         return this.title;
     }
+
+    public int getSize() { return this.items.size(); }
 }
