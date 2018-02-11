@@ -1,12 +1,17 @@
 package com.split.oshaleen.split;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 /**
@@ -26,6 +31,8 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
 //    private String mParam1;
 //    private String mParam2;
+    TextView text;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -69,8 +76,25 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        text = (TextView) getActivity().findViewById(R.id.home_title);
+        FloatingActionButton button = getActivity().findViewById(R.id.new_list_button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment frag = NewListFragment.newInstance();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment, frag);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+    }
+
 //    // TODO: Rename method, update argument and hook method into UI event
-//    public void onButtonPressed(Uri uri) {
+//    public void onButtonPressed(View view) {
 //        if (mListener != null) {
 //            mListener.onFragmentInteraction(uri);
 //        }
