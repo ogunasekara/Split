@@ -31,7 +31,6 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
 //    private String mParam1;
 //    private String mParam2;
-    TextView text;
 
 
     private OnFragmentInteractionListener mListener;
@@ -78,7 +77,6 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        text = (TextView) getActivity().findViewById(R.id.home_title);
         FloatingActionButton button = getActivity().findViewById(R.id.new_list_button);
 
         button.setOnClickListener(new View.OnClickListener() {

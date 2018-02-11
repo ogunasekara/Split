@@ -1,13 +1,63 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.split.oshaleen.split.BuyFragment">
+    tools:context="com.split.oshaleen.split.BuyFragment"
+    tools:ignore="ExtraText">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/buy_fragment_title" />
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:gravity="center"
+        android:text="@string/buy_fragment_title"
+        android:id="@+id/textView" />
 
-</FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/recyclerViewList"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:background="@android:color/darker_gray" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/divider">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:text="SPLIT" />
+
+
+</RelativeLayout>

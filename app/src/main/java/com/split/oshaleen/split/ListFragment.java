@@ -3,7 +3,9 @@ package com.split.oshaleen.split;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -66,8 +68,6 @@ public class ListFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-//        ImageView imageView = (ImageView) getView().findViewById(R.id.foo);
-
         RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.recycler_view);
 
         mAdapter = new ShoppingListAdapter(lists);
@@ -77,6 +77,19 @@ public class ListFragment extends Fragment {
         recyclerView.setAdapter(mAdapter);
 
         prepareListData();
+
+        FloatingActionButton button = getActivity().findViewById(R.id.new_list_button_2);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment frag = NewListFragment.newInstance();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment, frag);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
     }
 
     @Override
